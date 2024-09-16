@@ -1,0 +1,27 @@
+namespace ChemistryEquationsBackbone {
+  sequence<EquationSection> get_equations();
+  double calculate_equation(EquationIds equation_id, sequence<double> input);
+};
+
+dictionary EquationSection {
+  string title;
+  sequence<Equation> equations;
+};
+
+dictionary Equation {
+  EquationIds id;
+  string title;
+  string description;
+  sequence<EquationFilter> filters;
+  sequence<string> field_labels;
+};
+
+enum EquationFilter {
+  "AdvancedEquations",
+};
+
+enum EquationIds {
+  "Density1",
+  "Density2",
+  "Density3",
+};
