@@ -1,18 +1,19 @@
 namespace ChemistryEquationsBackbone {
   sequence<EquationSection> get_equations();
-  double calculate_equation(EquationIds equation_id, sequence<double> input);
+  double calculate_equation(string equation_id, sequence<double> input);
 };
 
 dictionary EquationSection {
+  string id;
   string title;
   sequence<Equation> equations;
 };
 
 dictionary Equation {
-  EquationIds id;
+  string id;
   string title;
   string description;
-  sequence<EquationFilter> filters;
+  sequence<string> filters;
   sequence<string> field_labels;
 };
 
